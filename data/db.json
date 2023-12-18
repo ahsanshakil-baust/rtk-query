@@ -2,23 +2,15 @@
   "users": [
     {
       "id": 1,
-      "name": "Ahsan"
+      "name": "AHSAN"
     },
     {
       "id": 2,
-      "name": "Ullah"
-    },
-    {
-      "id": 3,
       "name": "Shakil"
     },
     {
-      "name": "cfdscfs",
-      "id": 4
-    },
-    {
-      "name": "Gallau",
-      "id": 5
+      "name": "Ullah",
+      "id": 3
     }
   ]
 }

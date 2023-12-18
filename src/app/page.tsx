@@ -35,7 +35,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-start p-24">
       <form onSubmit={handleSubmit}>
         <input
           className="text-[#000]"
@@ -55,29 +55,31 @@ export default function Home() {
       ) : isError ? (
         <p>Error: {error?.message}</p>
       ) : (
-        users.map((user: any, index: number) => (
-          <li key={index}>
-            {user.name}
-            <button
-              className="ml-5"
-              onClick={() => {
-                setEdit(true);
-                setUser((prevState) => ({ name: user.name, id: user.id }));
-              }}
-            >
-              Edit
-            </button>
+        <ul className="mt-10">
+          {users.map((user: any, index: number) => (
+            <li key={index}>
+              {user.name}
+              <button
+                className="ml-5"
+                onClick={() => {
+                  setEdit(true);
+                  setUser((prevState) => ({ name: user.name, id: user.id }));
+                }}
+              >
+                Edit
+              </button>
 
-            <button
-              className="ml-5"
-              onClick={() => {
-                deleteUser(user);
-              }}
-            >
-              Delete
-            </button>
-          </li>
-        ))
+              <button
+                className="ml-5"
+                onClick={() => {
+                  deleteUser(user);
+                }}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
       )}
     </main>
   );
